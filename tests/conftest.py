@@ -544,11 +544,11 @@ def base_json_dereferenced():
 @pytest.fixture()
 def base_nresult():
     return {
-        "N_certifyingAuthority": {
+        "N_certifyingAuthority": [{
             "links": {
                 "self": "http://127.0.0.1:5000/2.0/taxonomies/test_taxonomy/mdcr"
             }
-        },
+        }],
         "N_dateCertified": "2020-03-19",
         "N_economicalParameters": "Výsledky diagnostiky staveb jsou podkladem pro návrh vhodného "
                                   "způsobu opatření či zásahu (údržba/ oprava/ rekonstrukce). "
@@ -575,16 +575,16 @@ def base_nresult():
                                  "příklady, při kterých je kombinace těchto zařízení využívána.",
         "N_internalID": "N-2020-FWD-GPR",
         "N_referenceNumber": "1/2020-710-VV/1",
-        "N_resultUsage": {
+        "N_resultUsage": [{
             "links": {
                 "self": "http://127.0.0.1:5000/2.0/taxonomies/test_taxonomy/c"
             }
-        },
-        "N_type": {
+        }],
+        "N_type": [{
             "links": {
                 "self": "http://127.0.0.1:5000/2.0/taxonomies/test_taxonomy/a"
             }
-        }
+        }]
     }
 
 
