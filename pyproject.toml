@@ -32,12 +32,12 @@ tests = ["oarepo", "pytest", "pytest-cov"]
 
 [tool.poetry.plugins."invenio_base.api_apps"]
 'nr_nresults' = 'nr_nresults:NRNresults'
-#
+
 [tool.poetry.plugins.'invenio_jsonschemas.schemas']
 'nr_nresults' = 'nr_nresults.jsonschemas'
 
-#[tool.poetry.plugins.'invenio_search.mappings']
-#'nr_nresults' = 'nr_nresults.mappings'
+[tool.poetry.plugins.'invenio_search.mappings']
+'nr_nresults' = 'nr_nresults.mappings'
 
 [tool.poetry.plugins.'oarepo_mapping_includes']
 'nr_nresults' = 'nr_nresults.mapping_includes'
