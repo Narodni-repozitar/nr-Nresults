@@ -1,0 +1,36 @@
+{
+  "mappings": {
+    "date_detection": false,
+    "numeric_detection": false,
+    "dynamic": false,
+    "properties": {
+      "oarepo:extends": "nusl-common-v1.0.0.json#/mappings/properties",
+      "N_certifyingAuthority": {
+        "type": "nusl-taxonomies-Nresults-v1.0.0.json#/N_certifyingAuthority"
+      },
+      "N_dateCertified": {
+        "type": "date"
+      },
+      "N_economicalParemeters": {
+        "type": "text"
+      },
+      "N_internalID": {
+        "type": "keyword"
+      },
+      "N_referenceNumber": {
+        "type": "keyword"
+      },
+      "N_resultUsage": {
+        "type": "nusl-taxonomies-Nresults-v1.0.0.json#/N_resultUsage"
+      },
+      "N_technicalParameters": {
+        "type": "text"
+      },
+      "N_type": {
+        "type": "nusl-taxonomies-Nresults-v1.0.0.json#/N_resultUsage"
+      }
+    }
+  }
+}
+
+
