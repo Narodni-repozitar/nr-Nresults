@@ -12,7 +12,7 @@ from __future__ import absolute_import, print_function
 from invenio_records_rest.utils import allow_all
 
 RECORDS_DRAFT_ENDPOINTS = {
-    'events': {
+    'nresults': {
         'draft': 'draft-nresults',
 
         'pid_type': 'nusl',
