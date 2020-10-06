@@ -6,9 +6,9 @@
 # the terms of the MIT License; see LICENSE file for more details.
 
 """JSON Schemas."""
-from invenio_nusl_common.marshmallow.fields import DateString
-from invenio_nusl_common.marshmallow.json import CommonMetadataSchemaV2
-from invenio_nusl_common.marshmallow.subschemas import TitledMixin
+from nr_common.marshmallow.fields import DateString
+from nr_common.marshmallow.json import CommonMetadataSchemaV2
+from nr_common.marshmallow.subschemas import TitledMixin
 from invenio_records_rest.schemas.fields import SanitizedUnicode
 from marshmallow.validate import Length
 from oarepo_taxonomies.marshmallow import TaxonomyField
