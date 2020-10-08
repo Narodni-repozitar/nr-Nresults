@@ -2404,7 +2404,7 @@ description = "Handling Draft and Production invenio records in one package"
 name = "oarepo-records-draft"
 optional = false
 python-versions = "*"
-version = "5.0.0a18"
+version = "5.0.0a19"
 
 [package.dependencies]
 deepmerge = "*"
@@ -4066,8 +4066,8 @@ oarepo-multilingual = [
     {file = "oarepo_multilingual-2.4.0.tar.gz", hash = "sha256:8492b7b335a7189033424cd47df4f32ede31aa17dea81347ade0b3315f98c1e8"},
 ]
 oarepo-records-draft = [
-    {file = "oarepo-records-draft-5.0.0a18.tar.gz", hash = "sha256:84f5d28c68a9adbc9f16a6dfd5ce549ba388116d7d20fc112bed2b5b8f05ea98"},
-    {file = "oarepo_records_draft-5.0.0a18-py3-none-any.whl", hash = "sha256:dcc920c3b8196150132540645f1617236f8b4a5e3732bc64c825f67020fe6371"},
+    {file = "oarepo-records-draft-5.0.0a19.tar.gz", hash = "sha256:1f2da0cf59409af4ac1e664f3a5fe70a00a48ac9fbdca29f081dad94861e9e38"},
+    {file = "oarepo_records_draft-5.0.0a19-py3-none-any.whl", hash = "sha256:58d76c0ba16c064b99498f1e7359985817eaa0dc226b106462b409bfadc86a33"},
 ]
 oarepo-references = [
     {file = "oarepo-references-1.8.3.tar.gz", hash = "sha256:27baae3d26dfb590b1a5db41f124f5147a2409fde08bd0357f40ae6fb09f0605"},

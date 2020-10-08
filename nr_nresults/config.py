@@ -15,9 +15,9 @@ RECORDS_DRAFT_ENDPOINTS = {
     'nresults': {
         'draft': 'draft-nresults',
 
-        'pid_type': 'nusl',
-        'pid_minter': 'nusl',
-        'pid_fetcher': 'nusl',
+        'pid_type': 'nrnrs',
+        'pid_minter': 'nr_nresults',
+        'pid_fetcher': 'nr_nresults',
         'default_endpoint_prefix': True,
         'max_result_window': 500000,
         'search_index': 'nresults',  # TODO: nestáhl se sám, podívat se na to
@@ -32,7 +32,7 @@ RECORDS_DRAFT_ENDPOINTS = {
 
     },
     'draft-nresults': {
-        'pid_type': 'dnusl',
+        'pid_type': 'dnrnrs',
     }
 }
 

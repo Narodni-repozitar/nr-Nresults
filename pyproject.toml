@@ -1,7 +1,7 @@
 [tool]
 [tool.poetry]
 name = "nr-Nresults"
-version = "1.0.0a1"
+version = "1.0.0a2"
 description = "National repository Nresults metadata model"
 license = "MIT"
 keywords = ["National repository", "events"]
@@ -41,4 +41,10 @@ tests = ["oarepo", "pytest", "pytest-cov"]
 
 [tool.poetry.plugins.'oarepo_mapping_includes']
 'nr_nresults' = 'nr_nresults.mapping_includes'
+
+[tool.poetry.plugins."invenio_pidstore.fetchers"]
+'nr_nresults' = 'nr_nresults.fetchers:nr_nresults_id_fetcher'
+
+[tool.poetry.plugins."invenio_pidstore.minters"]
+'nr_nresults' = 'nr_nresults.minters:nr_nresults_id_minter'
 
