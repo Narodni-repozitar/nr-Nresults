@@ -1,42 +1,33 @@
 notifications:
-    email: false
-
+  email: false
 dist: focal
-
 sudo: false
-
 language: python
-
 matrix:
-    fast_finish: true
-
+  fast_finish: true
 cache:
-    - pip
-
+- pip
 python:
-    - '3.8'
-
-
+- '3.8'
 before_install:
-    - travis_retry pip install --upgrade pip setuptools py
-    - "travis_retry pip install twine wheel coveralls"
-    - pip install poetry
-    - cat poetry.lock
-    - curl https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.6.2-amd64.deb -o elasticsearch.deb
-    - sudo dpkg -i --force-confnew elasticsearch.deb
-    - sudo chown -R elasticsearch:elasticsearch /etc/default/elasticsearch
-    - sudo service elasticsearch restart
-
+- travis_retry pip install --upgrade pip setuptools py
+- travis_retry pip install twine wheel coveralls
+- pip install poetry
+- cat poetry.lock
+- curl https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.6.2-amd64.deb
+  -o elasticsearch.deb
+- sudo dpkg -i --force-confnew elasticsearch.deb
+- sudo chown -R elasticsearch:elasticsearch /etc/default/elasticsearch
+- sudo service elasticsearch restart
 install:
-    - "travis_retry poetry install --extras tests"
-
+- travis_retry poetry install --extras tests
 before_script:
-  - sleep 10
-
+- sleep 10
 script:
-    - "./run-tests.sh"
-
+- "./run-tests.sh"
 after_success:
-    - coveralls
-
-
+- coveralls
+- test $TRAVIS_BRANCH = "master" && "./push-schemas.sh"
+env:
+  global:
+    secure: ZAOyNbcezh+L2Xxll07sZySMYSi1HrihPCWDQuLYae8pcgICiucXePW2mEeuURAr7jqQNnoHeQ6rCM0dKtuPbFSMqdB/TTHV+faUIPYD8LjkaQ8dqdem5RC97vkIdDkzAX5Jq/eZ5pUYLohgtC4OgkcT4CG0PMt99uHwYqZrLVrobnvkzyhWUXLqMUgdWidSev7uyCwLUgtgbf5PHZaB0cg9RisraJkufRAVb7WmsePBz7IxZEYhhxTH4GYAEaD5MNxaS6/753i9pIA7L7mtTGbliW93GrjqaMgqhA+KUIQCmtPSHbbwwrer3tnAKqZMccRzLb0K6O8pQUm0cA2El6+ES0JUBUePyKTn2zHavFLCm8969RFjj92Ufl8yqRonhBA8q0axt3XXb8Z6cDvq5qwH6crrmGnuAw3M2ppgCjPNFnMshnxcG4c5WcWAjJTRO4nWk9Tp2o/pGkAdsNlNayxxiZ0auwQfkWqIxaBKhVC3bzvwFf9KaptEaK9RmwwVV+bN9u2XLpLzA3qvba23i0xBFSJAP9GyHMVpH5/a+I0jW9lMMUgQE2WbVvxTtn4C4L6KQtt7bRhI0egwzB8bvZU479Iwe+QFTIxg8r6zscJdwZY9icyvWJKtLQGSt/y9s8wj1BAH+Tylf0V8XTQMHaoS6LgC/oB+CWcZCJZh7wU=
