@@ -3,7 +3,7 @@ from invenio_records.api import Record
 from oarepo_references.mixins import ReferenceEnabledRecordMixin
 from oarepo_validate import SchemaKeepingRecordMixin, MarshmallowValidatedRecordMixin
 
-from nr_nresults.constants import THESES_ALLOWED_SCHEMAS, THESES_PREFERRED_SCHEMA
+from nr_nresults.constants import NRESULTS_ALLOWED_SCHEMAS, NRESULTS_PREFERRED_SCHEMA
 from nr_nresults.marshmallow import NResultsMetadataSchemaV1
 
 
@@ -11,8 +11,8 @@ class PublishedNResultRecord(SchemaKeepingRecordMixin,
                            MarshmallowValidatedRecordMixin,
                            ReferenceEnabledRecordMixin,
                            Record):
-    ALLOWED_SCHEMAS = THESES_ALLOWED_SCHEMAS
-    PREFERRED_SCHEMA = THESES_PREFERRED_SCHEMA
+    ALLOWED_SCHEMAS = NRESULTS_ALLOWED_SCHEMAS
+    PREFERRED_SCHEMA = NRESULTS_PREFERRED_SCHEMA
     MARSHMALLOW_SCHEMA = NResultsMetadataSchemaV1
 
     @property
