@@ -4,22 +4,28 @@ from invenio_pidstore.models import PersistentIdentifier
 
 from nr_nresults.minters import nr_nresults_id_minter
 from nr_nresults.record import PublishedNResultRecord
+from tests.conftest import TestRecord
 
 
-def test_nr_nresults_id_minter(app, db, base_json, base_nresult, taxonomy_tree):
-    data = {**base_json, **base_nresult}
-    del data["control_number"]
-    record_uuid = uuid.uuid4()
-    minted_id = nr_nresults_id_minter(record_uuid=record_uuid, data=data)
-    print("\n\nminted_id: ", minted_id)
-    record = PublishedNResultRecord.create(data=data, id_=record_uuid)
-    print("\n\nRECORD: ", record)
+def test_nr_id_minter(app, db):
+    data = {
+        "title": "Test",
+        "resourceType": [
+            {
+                "is_ancestor": False,
+                "links": {
+                    "self": "https://example.com/taxonomies/parent/certified-methodologies"
+                }
+            }
+        ]
+    }
+    record = TestRecord.create(data=data)
+    minted_id = nr_nresults_id_minter(record_uuid=record.id, data=data)
     db.session.commit()
     pids = PersistentIdentifier.query.all()
     assert data["control_number"] == "1"
     assert pids[0].pid_value == "1"
     assert pids[0].pid_type == "nrnrs"
-    assert record["control_number"] == "1"
 
 
 def test_entry_points(app):
