@@ -18,7 +18,6 @@ jobs:
     strategy:
       matrix:
         python-version: [ 3.8 ]
-        SQLALCHEMY_DATABASE_URI: ["sqlite:///:memory:", "postgresql://postgres:postgres@postgres/ci-test"]
 
     steps:
       - uses: actions/checkout@v2
@@ -59,6 +58,9 @@ jobs:
       - name: Test with pytest
         run: |
           "./run-tests.sh"
+      - name: Push schemas
+        if: github.ref == 'refs/heads/master'
+        run: "./push-schemas.sh"
 #      - name: Check manifest
 #        run: |
 #          check-manifest
