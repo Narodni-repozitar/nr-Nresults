@@ -11,6 +11,8 @@ from __future__ import absolute_import, print_function
 
 from invenio_records_rest.utils import allow_all
 
+from nr_nresults.record import draft_index_name, published_index_name
+
 RECORDS_DRAFT_ENDPOINTS = {
     'nresults': {
         'draft': 'draft-nresults',
@@ -20,10 +22,9 @@ RECORDS_DRAFT_ENDPOINTS = {
         'pid_fetcher': 'nr_nresults',
         'default_endpoint_prefix': True,
         'max_result_window': 500000,
-        'search_index': 'nresults',  # TODO: nestáhl se sám, podívat se na to
-
+        'search_index': published_index_name,  # TODO: nestáhl se sám, podívat se na to
         'record_class': 'nr_nresults.record:PublishedNResultRecord',
-
+        'list_route': '/nresults/',
         'publish_permission_factory_imp': allow_all,  # TODO: change this !!!
         'unpublish_permission_factory_imp': allow_all,
         'edit_permission_factory_imp': allow_all,
@@ -33,6 +34,9 @@ RECORDS_DRAFT_ENDPOINTS = {
     },
     'draft-nresults': {
         'pid_type': 'dnrnrs',
+        'record_class': 'nr_nresults.record.DraftNResultRecord',
+        'list_route': '/draft/nresults/',
+        'search_index': draft_index_name
     }
 }
 
