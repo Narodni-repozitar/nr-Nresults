@@ -14,6 +14,7 @@ class TestAllFields:
         base_json_dereferenced["N_type"] = [
             {
                 'is_ancestor': False,
+                'level': 1,
                 'links': {
                     'self': 'http://127.0.0.1:5000/2.0/taxonomies/test_taxonomy/a'
                 },
