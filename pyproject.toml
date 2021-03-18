@@ -15,6 +15,7 @@ nr-common = { git = "https://github.com/Narodni-repozitar/nr-common.git", branch
 
 
 [tool.poetry.dev-dependencies]
+oarepo-mapping-includes = "<=1.2.0"
 oarepo-invenio-model = "^2.0.1"
 oarepo-multilingual = "^2.2.0"
 oarepo-records-draft = "^5.0.0a7"
