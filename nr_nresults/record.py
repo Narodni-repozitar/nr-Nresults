@@ -40,3 +40,8 @@ class PublishedNResultRecord(InvalidRecordAllowedMixin, NResultBaseRecord):
 
 class DraftNResultRecord(DraftRecordMixin, NResultBaseRecord):
     index_name = draft_index_name
+
+    @property
+    def canonical_url(self):
+        return url_for('invenio_records_rest.draft-nresults_item',
+                       pid_value=self['control_number'], _external=True)
