@@ -510,6 +510,7 @@ def base_json_dereferenced():
     return {
         'accessRights': [{
             'is_ancestor': False,
+            'level': 1,
             'links': {
                 'self': 'http://127.0.0.1:5000/2.0/taxonomies/test_taxonomy/c-abf2'
             },
@@ -531,6 +532,7 @@ def base_json_dereferenced():
         ],
         'language': [{
             'is_ancestor': False,
+            'level': 1,
             'links': {
                 'self': 'http://127.0.0.1:5000/2.0/taxonomies/test_taxonomy/cze'
             },
@@ -541,6 +543,7 @@ def base_json_dereferenced():
             'aliases': ['AMU'],
             'ico': '61384984',
             'is_ancestor': False,
+            'level': 1,
             'links': {
                 'self': 'http://127.0.0.1:5000/2.0/taxonomies/test_taxonomy/61384984'
             },
@@ -558,6 +561,7 @@ def base_json_dereferenced():
             'aliases': ['AMU'],
             'ico': '61384984',
             'is_ancestor': False,
+            'level': 1,
             'links': {
                 'self': 'http://127.0.0.1:5000/2.0/taxonomies/test_taxonomy/61384984'
             },
@@ -572,6 +576,7 @@ def base_json_dereferenced():
         }],
         'resourceType': [{
             'is_ancestor': False,
+            'level': 1,
             'links': {
                 'self': 'http://127.0.0.1:5000/2.0/taxonomies/test_taxonomy/bakalarske-prace'
             },
@@ -636,6 +641,7 @@ def base_nresult_dereferenced():
     return {
         'N_certifyingAuthority': [{
             'is_ancestor': False,
+            'level': 1,
             'links': {
                 'self':
                     'http://127.0.0.1:5000/2.0/taxonomies/test_taxonomy/mdcr'
@@ -662,6 +668,7 @@ def base_nresult_dereferenced():
         'N_referenceNumber': '1/2020-710-VV/1',
         'N_resultUsage': [{
             'is_ancestor': False,
+            'level': 1,
             'links': {
                 'self': 'http://127.0.0.1:5000/2.0/taxonomies/test_taxonomy/c'
             },
@@ -690,6 +697,7 @@ def base_nresult_dereferenced():
                                  'využívána.',
         'N_type': [{
             'is_ancestor': False,
+            'level': 1,
             'links': {'self': 'http://127.0.0.1:5000/2.0/taxonomies/test_taxonomy/a'},
             'title': {'cs': 'certifikovaná metodika (NmetC)'}
         }]
