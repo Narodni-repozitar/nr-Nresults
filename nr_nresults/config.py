@@ -29,6 +29,7 @@ RECORDS_DRAFT_ENDPOINTS = {
         'unpublish_permission_factory_imp': allow_all,
         'edit_permission_factory_imp': allow_all,
         'default_media_type': 'application/json',
+        'links_factory_imp': 'oarepo_fsm.links:record_fsm_links_factory'
         # 'indexer_class': CommitingRecordIndexer,
 
     },
@@ -36,7 +37,8 @@ RECORDS_DRAFT_ENDPOINTS = {
         'pid_type': 'dnrnrs',
         'record_class': 'nr_nresults.record.DraftNResultRecord',
         'list_route': '/draft/nresults/',
-        'search_index': draft_index_name
+        'search_index': draft_index_name,
+        'links_factory_imp': 'oarepo_fsm.links:record_fsm_links_factory'
     }
 }
 
