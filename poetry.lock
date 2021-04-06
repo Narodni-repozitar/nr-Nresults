@@ -796,6 +796,18 @@ blinker = "*"
 
 [[package]]
 category = "dev"
+description = "Pagination extension for flask-restful"
+name = "flask-rest-paginate"
+optional = false
+python-versions = "*"
+version = "1.1.2"
+
+[package.dependencies]
+flask-restful = "*"
+flask-sqlalchemy = "*"
+
+[[package]]
+category = "dev"
 description = "Simple framework for creating REST APIs"
 name = "flask-restful"
 optional = false
@@ -2415,6 +2427,57 @@ tests = ["alembic (1.5.8)", "amqp (5.0.6)", "angular-gettext-babel (0.3)", "anis
 
 [[package]]
 category = "dev"
+description = "OArepo module that adds support for communities"
+name = "oarepo-communities"
+optional = false
+python-versions = "*"
+version = "1.4.0"
+
+[package.dependencies]
+oarepo-enrollment-permissions = "*"
+oarepo-fsm = ">=1.5.0"
+oarepo-micro-api = "*"
+oarepo-ui = "*"
+
+[package.extras]
+all = ["oarepo (>=3.3.0,<3.4.0)", "pydocstyle", "isort"]
+tests = ["oarepo (>=3.3.0,<3.4.0)", "pydocstyle", "isort"]
+
+[[package]]
+category = "dev"
+description = "OArepo Enrollment library for record metadata validation"
+name = "oarepo-enrollment-permissions"
+optional = false
+python-versions = "*"
+version = "1.0.1"
+
+[package.dependencies]
+oarepo-enrollments = "*"
+wrapt = ">=1.11.2"
+
+[package.extras]
+dev = ["pytest", "oarepo (>=3.3,<4.0)", "markdown-toc"]
+tests = ["pytest", "oarepo (>=3.3,<4.0)"]
+
+[[package]]
+category = "dev"
+description = "OArepo Enrollments library for record metadata validation"
+name = "oarepo-enrollments"
+optional = false
+python-versions = "*"
+version = "1.2.1"
+
+[package.dependencies]
+flask-rest-paginate = "*"
+tabulate = "*"
+wrapt = ">=1.11.2"
+
+[package.extras]
+dev = ["pytest", "oarepo (>=3.3,<4.0)", "mock", "markdown-toc"]
+tests = ["pytest", "oarepo (>=3.3,<4.0)", "mock"]
+
+[[package]]
+category = "dev"
 description = "OArepo FSM library for record state transitions"
 name = "oarepo-fsm"
 optional = false
@@ -2429,6 +2492,17 @@ deploy = ["oarepo (>=3.3.0,<3.4.0)"]
 devel = ["oarepo (>=3.3.0,<3.4.0)"]
 tests = ["oarepo (>=3.3.0,<3.4.0)"]
 tests-es7 = ["oarepo (>=3.3.0,<3.4.0)"]
+
+[[package]]
+category = "dev"
+description = ""
+name = "oarepo-heartbeat"
+optional = false
+python-versions = "*"
+version = "1.0.0"
+
+[package.dependencies]
+pip = ">=6.0.0"
 
 [[package]]
 category = "main"
@@ -2461,6 +2535,24 @@ requests = "*"
 
 [package.extras]
 tests = ["invenio", "pytest", "pytest-cov", "pytest-pep8", "requests-mock"]
+
+[[package]]
+category = "dev"
+description = "OARepo REST API microservice"
+name = "oarepo-micro-api"
+optional = false
+python-versions = "*"
+version = "3.3.59"
+
+[package.dependencies]
+oarepo = ">=3.3.59,<3.4.0"
+oarepo-heartbeat = "*"
+uwsgi = ">=2.0"
+uwsgi-tools = ">=1.1.1"
+uwsgitop = ">=0.11"
+
+[package.extras]
+tests = ["webtest", "oarepo (>=3.3.59,<3.4.0)"]
 
 [[package]]
 category = "dev"
@@ -2530,6 +2622,18 @@ version = ">=1.8.3,<2.0.0"
 
 [package.extras]
 tests = ["pytest", "pytest-cov", "oarepo (3.3.26)"]
+
+[[package]]
+category = "dev"
+description = "API for javascript user interface"
+name = "oarepo-ui"
+optional = false
+python-versions = "*"
+version = "2.3.0"
+
+[package.extras]
+tests = ["invenio-i18n", "oarepo", "oarepo (>=3.3.0,<3.4.0)"]
+tests-es7 = ["invenio-i18n", "oarepo", "oarepo (>=3.3.0,<3.4.0)"]
 
 [[package]]
 category = "dev"
@@ -3102,6 +3206,17 @@ timezone = ["python-dateutil"]
 url = ["furl (>=0.4.1)"]
 
 [[package]]
+category = "dev"
+description = "Pretty-print tabular data"
+name = "tabulate"
+optional = false
+python-versions = "*"
+version = "0.8.9"
+
+[package.extras]
+widechars = ["wcwidth"]
+
+[[package]]
 category = "main"
 description = "NR common data types"
 name = "techlib-nr-common"
@@ -3187,6 +3302,30 @@ version = "1.25.11"
 brotli = ["brotlipy (>=0.6.0)"]
 secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "certifi", "ipaddress"]
 socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7,<2.0)"]
+
+[[package]]
+category = "dev"
+description = "The uWSGI server"
+name = "uwsgi"
+optional = false
+python-versions = "*"
+version = "2.0.19.1"
+
+[[package]]
+category = "dev"
+description = "uwsgi tools: curl and reverse proxy"
+name = "uwsgi-tools"
+optional = false
+python-versions = "*"
+version = "1.1.1"
+
+[[package]]
+category = "dev"
+description = "uWSGI top-like interface"
+name = "uwsgitop"
+optional = false
+python-versions = "*"
+version = "0.11"
 
 [[package]]
 category = "dev"
@@ -3350,7 +3489,7 @@ test = ["pytest (>=2.2.3)", "flexmock (>=0.9.7)", "WTForms-Test (>=0.1.1)", "fla
 timezone = ["python-dateutil"]
 
 [metadata]
-content-hash = "e6ffb6c99e98904b63607a7dddfa6a60ff14bb8217352bd05a7246677acf718d"
+content-hash = "421414c9d833c18c5ff7504030293790ac8ef73145e03775678e7e4f521dfa28"
 lock-version = "1.0"
 python-versions = "^3.8"
 
@@ -3715,6 +3854,9 @@ flask-oauthlib = [
 ]
 flask-principal = [
     {file = "Flask-Principal-0.4.0.tar.gz", hash = "sha256:f5d6134b5caebfdbb86f32d56d18ee44b080876a27269560a96ea35f75c99453"},
+]
+flask-rest-paginate = [
+    {file = "flask_rest_paginate-1.1.2-py3-none-any.whl", hash = "sha256:ada8bb800318a94879b10205ccdead9206a6ac49adbe2c0efb43842450d93a2b"},
 ]
 flask-restful = [
     {file = "Flask-RESTful-0.3.8.tar.gz", hash = "sha256:5ea9a5991abf2cb69b4aac19793faac6c032300505b325687d7c305ffaa76915"},
@@ -4142,9 +4284,24 @@ oarepo = [
     {file = "oarepo-3.3.59-py2.py3-none-any.whl", hash = "sha256:78d5fd0a6666cbebf6efdb6b82f022159734ceab8c60ad2c30aa235abb922ead"},
     {file = "oarepo-3.3.59.tar.gz", hash = "sha256:6432be841460f14ba661e024cbb9efe5cd4db9a1875401a82a961f5e27c30860"},
 ]
+oarepo-communities = [
+    {file = "oarepo-communities-1.4.0.tar.gz", hash = "sha256:449416f166137cdf5eb6c329544a7afaea91dcd8a8efa05115e7a32f13e1c715"},
+    {file = "oarepo_communities-1.4.0-py2.py3-none-any.whl", hash = "sha256:b5e387df94353f49e3876911085442eab6b8eade80af9aee0ca155a143362c66"},
+]
+oarepo-enrollment-permissions = [
+    {file = "oarepo-enrollment-permissions-1.0.1.tar.gz", hash = "sha256:3c5338326c84c40550f126e67bcf8203e9f3887158db245a73aee566ff966c85"},
+    {file = "oarepo_enrollment_permissions-1.0.1-py2.py3-none-any.whl", hash = "sha256:f19c70d3606d8493c8101c808cd3699a41d1ddbe10b9555806d6337b72df4453"},
+]
+oarepo-enrollments = [
+    {file = "oarepo-enrollments-1.2.1.tar.gz", hash = "sha256:8b61d30afc6af26bbac5c0a9c4a4e1eda47ef74236b64bbd234b079b012e9f2c"},
+    {file = "oarepo_enrollments-1.2.1-py2.py3-none-any.whl", hash = "sha256:18f11f118250db65902ef12632dabbb5f5dea41eb02599ca1ebc3d2d05aa729f"},
+]
 oarepo-fsm = [
     {file = "oarepo-fsm-1.5.1.tar.gz", hash = "sha256:96b8c02a68e8052593eb8b58d2ef2658ba2887a9e4d34ec501656fdb8d6d2c61"},
     {file = "oarepo_fsm-1.5.1-py2.py3-none-any.whl", hash = "sha256:07105435afb23c60d740ae6bbe2caee11d2460d7bebfc7831ea5c154d82e7047"},
+]
+oarepo-heartbeat = [
+    {file = "oarepo-heartbeat-1.0.0.tar.gz", hash = "sha256:f84324faa5933025bac5e7f22c6f8dc010db526757dd0bc288bfceca651046bd"},
 ]
 oarepo-invenio-model = [
     {file = "oarepo_invenio_model-2.1.2-py3-none-any.whl", hash = "sha256:c957cc6cf3a793c8266d6527de5c6613672b5f474d1c53450203cfed608216c7"},
@@ -4153,6 +4310,10 @@ oarepo-invenio-model = [
 oarepo-mapping-includes = [
     {file = "oarepo-mapping-includes-1.2.0.tar.gz", hash = "sha256:82177fe88082db1235f47dbf33e78d915758dde04798c097e95c2f5584327adb"},
     {file = "oarepo_mapping_includes-1.2.0-py3-none-any.whl", hash = "sha256:05fd0f561e63db1ada9619e84752ebebe6e0e8cfe9b16362e349045c4d6aebc8"},
+]
+oarepo-micro-api = [
+    {file = "oarepo-micro-api-3.3.59.tar.gz", hash = "sha256:a0661b9ce513ced858e7f82f413a333b68a7bb21590a9628f612c0be29849763"},
+    {file = "oarepo_micro_api-3.3.59-py2.py3-none-any.whl", hash = "sha256:7fe3441e1827fa3cd909fa790900708cf6abb87cb5beb6ccc51072cfb50e183d"},
 ]
 oarepo-multilingual = [
     {file = "oarepo_multilingual-2.5.0-py3-none-any.whl", hash = "sha256:7d37893ec8dbf8ad157c029a02cf15fffa507adb745de1bc0a6fe903a9729a2e"},
@@ -4169,6 +4330,10 @@ oarepo-references = [
 oarepo-taxonomies = [
     {file = "oarepo_taxonomies-3.0.0a1-py2.py3-none-any.whl", hash = "sha256:02ebb8c99f79bacf73759308a3af2b9841b0f31e5caa6b5a66b777b046c76a85"},
     {file = "oarepo_taxonomies-3.0.0a1.tar.gz", hash = "sha256:be3f917c998e74f267f97a4e43fea087a97330e5bac3bc69d7335c6c72707074"},
+]
+oarepo-ui = [
+    {file = "oarepo_ui-2.3.0-py3-none-any.whl", hash = "sha256:dcf183de97b0b9b41812fdc141b64e257796dda5387945ed6fe68e7e3b1f0203"},
+    {file = "oarepo_ui-2.3.0.tar.gz", hash = "sha256:d493769ecdf0afd72b14dff9f62e7561fd13455c1876a3755de161c815a374aa"},
 ]
 oarepo-validate = [
     {file = "oarepo-validate-1.5.2.tar.gz", hash = "sha256:d928aa102cef1c9d2eff118b72fcde263aacab61c3626f06bc36d9da49bf5186"},
@@ -4533,6 +4698,10 @@ sqlalchemy-continuum = [
 sqlalchemy-utils = [
     {file = "SQLAlchemy-Utils-0.35.0.tar.gz", hash = "sha256:01f0f0ebed696386bc7bf9231cd6894087baba374dd60f40eb1b07512d6b1a5e"},
 ]
+tabulate = [
+    {file = "tabulate-0.8.9-py3-none-any.whl", hash = "sha256:d7c013fe7abbc5e491394e10fa845f8f32fe54f8dc60c6622c6cf482d25d47e4"},
+    {file = "tabulate-0.8.9.tar.gz", hash = "sha256:eb1d13f25760052e8931f2ef80aaf6045a6cceb47514db8beab24cded16f13a7"},
+]
 techlib-nr-common = [
     {file = "techlib-nr-common-3.0.0a38.tar.gz", hash = "sha256:7e2043dcf2d4862705814d19dfb2fb27157cb18bcf7dc23fd5a305e5662bf121"},
     {file = "techlib_nr_common-3.0.0a38-py3-none-any.whl", hash = "sha256:3e60bcef47deec2f03ad3c512be41b8a9920e69b4287e393501692c425211b39"},
@@ -4569,6 +4738,16 @@ uritools = [
 urllib3 = [
     {file = "urllib3-1.25.11-py2.py3-none-any.whl", hash = "sha256:f5321fbe4bf3fefa0efd0bfe7fb14e90909eb62a48ccda331726b4319897dd5e"},
     {file = "urllib3-1.25.11.tar.gz", hash = "sha256:8d7eaa5a82a1cac232164990f04874c594c9453ec55eef02eab885aa02fc17a2"},
+]
+uwsgi = [
+    {file = "uWSGI-2.0.19.1.tar.gz", hash = "sha256:faa85e053c0b1be4d5585b0858d3a511d2cd10201802e8676060fd0a109e5869"},
+]
+uwsgi-tools = [
+    {file = "uwsgi-tools-1.1.1.tar.gz", hash = "sha256:565e10945c50ed6f4378168a2a609bb7d1c2c5b21ab23edd1ad5f73d15ab6356"},
+    {file = "uwsgi_tools-1.1.1-py3-none-any.whl", hash = "sha256:7d557c83b1803962ea73c2f19688b0d5e7d212f382d0a1a0a4586ae0f34f4cb2"},
+]
+uwsgitop = [
+    {file = "uwsgitop-0.11.tar.gz", hash = "sha256:99ca245119e4a0600840a62b7b4e020c9870fe90952b24eecfff0c9090c75d14"},
 ]
 validators = [
     {file = "validators-0.18.2-py3-none-any.whl", hash = "sha256:0143dcca8a386498edaf5780cbd5960da1a4c85e0719f3ee5c9b41249c4fefbd"},
