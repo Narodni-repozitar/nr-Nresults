@@ -458,6 +458,7 @@ def get_pid():
 @pytest.fixture()
 def base_json():
     return {
+        "_primary_community": "nr",
         "accessRights": [{
             "is_ancestor": False,
             "links": {
@@ -511,6 +512,7 @@ def base_json():
 @pytest.fixture()
 def base_json_dereferenced():
     return {
+        '_primary_community': 'nr',
         'accessRights': [{
             'is_ancestor': False,
             'level': 1,

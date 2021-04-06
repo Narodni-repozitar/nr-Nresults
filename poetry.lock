@@ -3222,7 +3222,7 @@ description = "NR common data types"
 name = "techlib-nr-common"
 optional = false
 python-versions = ">=3.8,<4.0"
-version = "3.0.0a38"
+version = "3.0.0a39"
 
 [package.dependencies]
 idutils = ">=1.1.8,<2.0.0"
@@ -3489,7 +3489,7 @@ test = ["pytest (>=2.2.3)", "flexmock (>=0.9.7)", "WTForms-Test (>=0.1.1)", "fla
 timezone = ["python-dateutil"]
 
 [metadata]
-content-hash = "421414c9d833c18c5ff7504030293790ac8ef73145e03775678e7e4f521dfa28"
+content-hash = "7cc9e1cb833b3212f599a5298f9fc4d67e412dcc83160eaaba2928c5f07aed92"
 lock-version = "1.0"
 python-versions = "^3.8"
 
@@ -4703,8 +4703,8 @@ tabulate = [
     {file = "tabulate-0.8.9.tar.gz", hash = "sha256:eb1d13f25760052e8931f2ef80aaf6045a6cceb47514db8beab24cded16f13a7"},
 ]
 techlib-nr-common = [
-    {file = "techlib-nr-common-3.0.0a38.tar.gz", hash = "sha256:7e2043dcf2d4862705814d19dfb2fb27157cb18bcf7dc23fd5a305e5662bf121"},
-    {file = "techlib_nr_common-3.0.0a38-py3-none-any.whl", hash = "sha256:3e60bcef47deec2f03ad3c512be41b8a9920e69b4287e393501692c425211b39"},
+    {file = "techlib-nr-common-3.0.0a39.tar.gz", hash = "sha256:8a10a3ae2b1dba66c691d6fdf300cf3cc3119064cd2caeb3f621adbc2f04f83a"},
+    {file = "techlib_nr_common-3.0.0a39-py3-none-any.whl", hash = "sha256:43b3db1c0d974dfae2debf5cff8d2b39932f574aef2d231ade687750b3150797"},
 ]
 testpath = [
     {file = "testpath-0.4.4-py2.py3-none-any.whl", hash = "sha256:bfcf9411ef4bf3db7579063e0546938b1edda3d69f4e1fb8756991f5951f85d4"},

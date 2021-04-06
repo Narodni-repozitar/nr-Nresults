@@ -14,7 +14,6 @@ packages = [{ include = "nr_nresults" }]
 python = "^3.8"
 techlib-nr-common = "^3.0.0a38"
 
-
 [tool.poetry.dev-dependencies]
 oarepo-mapping-includes = "<=1.2.0"
 oarepo-invenio-model = "^2.0.1"
@@ -26,7 +25,7 @@ oarepo-validate = "^1.2.8"
 pytest = "^5.0.0"
 pytest-cov = "^2.10.1"
 pytest-runner = "^5.2"
-oarepo = "^3.3"
+oarepo = "^3.3.59"
 oarepo-fsm = "^1.5.0"
 oarepo-communities = "^1.4.0"
 
