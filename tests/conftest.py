@@ -94,6 +94,7 @@ def app():
         CELERY_CACHE_BACKEND='memory',
         CELERY_TASK_EAGER_PROPAGATES=True,
         SUPPORTED_LANGUAGES=["cs", "en"],
+        OAREPO_COMMUNITIES_ENDPOINTS=[],
         ELASTICSEARCH_DEFAULT_LANGUAGE_TEMPLATE={
             "type": "text",
             "fields": {
