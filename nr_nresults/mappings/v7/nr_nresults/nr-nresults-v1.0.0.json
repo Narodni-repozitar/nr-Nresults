@@ -30,9 +30,12 @@
         "type": "text"
       },
       "N_type": {
-        "type": "nr-taxonomies-Nresults-v1.0.0.json#/N_resultUsage"
+        "type": "nr-taxonomies-Nresults-v1.0.0.json#/N_type"
       }
     }
+  },
+  "settings": {
+    "index.mapping.total_fields.limit": 2000
   }
 }
 
