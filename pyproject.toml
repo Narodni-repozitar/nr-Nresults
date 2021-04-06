@@ -12,11 +12,7 @@ packages = [{ include = "nr_nresults" }]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-<<<<<<< Updated upstream
-nr-common = { git = "https://github.com/Narodni-repozitar/nr-common.git", branch = "devel" }
-=======
 nr-common = "^3.0.0a38"
->>>>>>> Stashed changes
 
 
 [tool.poetry.dev-dependencies]
