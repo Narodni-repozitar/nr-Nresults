@@ -35,6 +35,7 @@ from invenio_search import InvenioSearch
 from marshmallow import Schema
 from marshmallow.fields import Url, Boolean, Nested, List
 from oarepo_communities import OARepoCommunities
+from oarepo_communities.converters import CommunityPIDConverter
 from oarepo_mapping_includes.ext import OARepoMappingIncludesExt
 from oarepo_records_draft.ext import RecordsDraft
 from oarepo_references import OARepoReferences
@@ -129,6 +130,7 @@ def app():
     # Invenio Records Draft initialization
     RecordsDraft(app)
     app.url_map.converters['pid'] = PIDConverter
+    app.url_map.converters['commpid'] = CommunityPIDConverter
 
     # Celery
     print(app.config["CELERY_BROKER_URL"])

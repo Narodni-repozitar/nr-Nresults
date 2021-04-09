@@ -28,6 +28,8 @@ To see more about providers see :mod:`invenio_pidstore.providers`.
 from __future__ import absolute_import, print_function
 
 from invenio_pidstore.fetchers import FetchedPID
+from oarepo_communities.converters import CommunityPIDValue
+from oarepo_communities.proxies import current_oarepo_communities
 
 from .providers import NRNresultsIdProvider
 
@@ -43,5 +45,7 @@ def nr_nresults_id_fetcher(record_uuid, data):
     return FetchedPID(  # FetchedPID je obyčejný namedtuple
         provider=NRNresultsIdProvider,
         pid_type=NRNresultsIdProvider.pid_type,
-        pid_value=str(data[id_field]),
+        pid_value=CommunityPIDValue(
+            str(data[id_field]),
+            current_oarepo_communities.get_primary_community_field(data))
     )
