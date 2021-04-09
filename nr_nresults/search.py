@@ -1,10 +1,13 @@
 from invenio_search import RecordsSearch
+from nr_common.search import NRRecordsSearch
 
 
-class NResultsRecordsSearch(RecordsSearch):
+class NResultsRecordsSearch(NRRecordsSearch):
     LIST_SOURCE_FIELDS = [
         'control_number', 'oarepo:validity.valid', 'oarepo:draft', 'title', 'dateIssued',
-        'creator', 'resourceType', 'contributor', 'keywords', 'subject', 'abstract', 'state'        '_administration.primaryCommunity',
+        'creator', 'resourceType', 'contributor', 'keywords', 'subject', 'abstract',
+        'state',
+        '_administration.primaryCommunity',
         '_administration.communities'
     ]
     HIGHLIGHT_FIELDS = {
