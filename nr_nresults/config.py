@@ -12,6 +12,7 @@ from __future__ import absolute_import, print_function
 from invenio_records_rest.utils import allow_all
 
 from nr_nresults.record import draft_index_name, published_index_name
+from nr_nresults.search import NresultsRecordsSearch
 
 RECORDS_DRAFT_ENDPOINTS = {
     'nresults': {
@@ -29,7 +30,8 @@ RECORDS_DRAFT_ENDPOINTS = {
         'unpublish_permission_factory_imp': allow_all,
         'edit_permission_factory_imp': allow_all,
         'default_media_type': 'application/json',
-        'links_factory_imp': 'oarepo_fsm.links:record_fsm_links_factory'
+        'links_factory_imp': 'oarepo_fsm.links:record_fsm_links_factory',
+        'search_class': NresultsRecordsSearch
         # 'indexer_class': CommitingRecordIndexer,
 
     },
@@ -38,7 +40,8 @@ RECORDS_DRAFT_ENDPOINTS = {
         'record_class': 'nr_nresults.record.DraftNResultRecord',
         'list_route': '/draft/nresults/',
         'search_index': draft_index_name,
-        'links_factory_imp': 'oarepo_fsm.links:record_fsm_links_factory'
+        'links_factory_imp': 'oarepo_fsm.links:record_fsm_links_factory',
+        'search_class': NresultsRecordsSearch
     }
 }
 
