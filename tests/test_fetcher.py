@@ -13,7 +13,7 @@ def test_nr_nresults_id_fetcher(app, db, base_json, taxonomy_tree, base_nresult)
     record = PublishedNResultRecord.create(data=data, id_=uuid_)
     fetched_id = nr_nresults_id_fetcher(record_uuid=uuid_, data=data)
     assert fetched_id.pid_type == "nrnrs"
-    assert fetched_id.pid_value == data[id_field]
+    assert str(fetched_id.pid_value) == str(data[id_field])
 
 
 def test_entry_points(app):

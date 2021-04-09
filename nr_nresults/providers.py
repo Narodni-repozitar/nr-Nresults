@@ -14,7 +14,4 @@ from nr_common.providers import NRIdProvider
 
 
 class NRNresultsIdProvider(NRIdProvider):
-    """Thesss identifier provider."""
-
     pid_type = 'nrnrs'
-    """Type of persistent identifier."""

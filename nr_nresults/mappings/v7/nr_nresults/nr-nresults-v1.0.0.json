@@ -1,6 +1,7 @@
 {
   "aliases": {
-    "nr-all": {}
+    "nr-all": {},
+    "nr-all-nresults": {}
   },
   "mappings": {
     "date_detection": false,
